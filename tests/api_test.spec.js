@@ -25,10 +25,18 @@ test('API POST Request', async ({ request }) => {
 
     expect(response.status()).toBe(201);
 
-    const text = await response.text();
-    expect(text).toContain('Janet');
+     const body = await response.json();
 
-    console.log(await response.json());
+    expect(body.name).toBe('morpheus');
+    expect(body.job).toBe('leader');
+    expect(body.id).toBeTruthy();
+
+    console.log(body);
+
+    // const text = await response.text();
+    // expect(text).toContain('Janet');
+
+    // console.log(await response.json());
 
 });
 

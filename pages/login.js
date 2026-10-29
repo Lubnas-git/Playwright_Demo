@@ -1,5 +1,5 @@
 
-//to be able to user the LoginPage class in another file, you would need to 
+//to be able to use the LoginPage class in another file, you would need to 
 //make it exportable by using exports.LoginPage = class LoginPage{ etc}
 // and ofcourse in the file where you need to use it, you have to import it their.
 
@@ -9,11 +9,11 @@ exports.LoginPage = class LoginPage {
         this.page = page;
         this.username_textbox = page.getByRole('textbox',{name: 'Username'});
         this.password_textbox = page.getByRole('textbox',{name:'Password'});
-        this.login_button = page.getByRole('button', {name: ' Login' });
+        this.login_button = page.getByRole('button', {name: 'Login' });
     }
 
     async gotoLoginPage(){
-        await this.page.goto('https://the-internet.herokuapp.com/login');
+        await this.page.goto('https://www.saucedemo.com');
     }
     async login(username, password){
         await this.username_textbox.fill(username);

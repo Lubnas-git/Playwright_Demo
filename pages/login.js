@@ -20,17 +20,19 @@ exports.LoginPage = class LoginPage {
         await this.password_textbox.fill(password);
         await this.login_button.click();
     }
-    async loginNow(){
-        await this.username_textbox.fill('standard_user');
-        await this.password_textbox.fill('secret_sauce');
-        await this.login_button.click();
-    }
+    // async loginNow(){
+    //     await this.username_textbox.fill('standard_user');
+    //     await this.password_textbox.fill('secret_sauce');
+    //     await this.login_button.click();
+    // }
     async completeLogin(){
-        await this.page.goto('https://www.saucedemo.com');
-        await expect(page).toHaveURL(/login/);
-        await this.username_textbox.fill('standard_user');
-        await this.password_textbox.fill('secret_sauce');
-        await this.login_button.click();
+        // await this.page.goto('https://www.saucedemo.com');
+        // await expect(page).toHaveURL(/login/);
+        // await this.username_textbox.fill('standard_user');
+        // await this.password_textbox.fill('secret_sauce');
+        // await this.login_button.click();
+        await this.gotoLoginPage();
+        await this.login('standard_user', 'secret_sauce')
     }
 
 }

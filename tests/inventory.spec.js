@@ -9,7 +9,6 @@ let inventory, inventoryItems, productSort,
 
 test.beforeEach(async ({ page }) => {
     login = new LoginPage(page);
-    await login.gotoLoginPage();
     await login.completeLogin();
     await expect(page).toHaveURL(/inventory/);
 
@@ -97,14 +96,14 @@ test('TC-I07 - Back to products', async ({ page }) => {
 });
 
 test('TC-I08 - Add to cart from list', async ({ page }) => {
-    await inventoryItems.first().addToCartBtn.click();
-    await expect(inventoryItems.first().removeBtn).toBeVisible();
+    await inventoryItems.first().getByRole('button', { name: 'Add to Cart' }).click();
+    await expect(inventoryItems.first().getByRole('button', { name: 'Remove' })).toBeVisible();
     await expect(shoppingCart).toHaveCount(1);
 });
 
 test('TC-I09 - Remove from list', async ({ page }) => {
-    await inventoryItems.first().addToCartBtn.click();
-    await inventoryItems.first().removeBtn.click();
-    await expect(inventoryItems.first().addToCartBtn).toBeVisible();
+    await inventoryItems.first().getByRole('button', { name: 'Add to Cart' }).click();
+    await inventoryItems.first().getByRole('button', { name: 'Remove' }).click();
+    await expect(inventoryItems.first().getByRole('button', { name: 'Add to Cart' })).toBeVisible();
     await expect(shoppingCart).toHaveCount(0);
 });

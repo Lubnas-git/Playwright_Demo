@@ -13,10 +13,11 @@ exports.InventoryPage = class InventoryPage {
         this.item_price = page.locator('.inventory_item_price');
         this.item_description = page.locator('.inventory_item_desc');
 
-        this.shopping_cart = page.locator('.shopping_cart_badge');
+        this.shopping_cart = page.locator('.shopping_cart_link');
 
-        this.add_to_cart_btn = page.getByRole('button', { name: 'Add to Cart' });
-        this.remove_btn = page.getByRole('button', { name: 'Remove' });
-    }
+        this.burger_menu = page.getByRole("button", { name: "Open Menu" });
+        
+        this.dynamic_catalog = page.getByRole('button',{name: 'Dynamic Catalog'});
+     }
 
 }

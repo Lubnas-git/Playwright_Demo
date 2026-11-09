@@ -15,6 +15,8 @@ exports.InventoryPage = class InventoryPage {
 
         this.shopping_cart = page.locator('.shopping_cart_link');
 
+        //this.addToCartBtn = this.inventory_items.getByRole("button", { name: "Add to cart" });
+
         this.burger_menu = page.getByRole("button", { name: "Open Menu" });
         
         this.dynamic_catalog = page.getByRole('button',{name: 'Dynamic Catalog'});

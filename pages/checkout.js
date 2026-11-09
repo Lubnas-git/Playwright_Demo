@@ -11,4 +11,9 @@ constructor(page){
     this.zip_Code = page.getByLabel("Zip/Postal Code");
 }
 
+async inputDetails() {
+        await this.first_Name.fill("Lubna");
+        await this.last_Name.fill("Araman");
+        await this.zip_Code.fill("12345");
+    }
 }

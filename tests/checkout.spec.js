@@ -26,7 +26,6 @@ test.beforeEach(async ({ page }) => {
   firstName = checkout.first_Name;
   lastName = checkout.last_Name;
   zipCode = checkout.zip_Code;
-
 });
 
 test("TC-CH01 - Checkout with valid info", async ({ page }) => {
@@ -37,9 +36,8 @@ test("TC-CH01 - Checkout with valid info", async ({ page }) => {
   await checkoutBtn.click();
 
   await expect(page).toHaveURL(/checkout-step-one/);
-  await firstName.fill("John");
-  await lastName.fill("Doe");
-  await zipCode.fill("12345");
+  //fills the step 2 page info, first, last name and zip code
+  await checkout.inputDetails();
 
   await continueBtn.click();
 
@@ -162,11 +160,8 @@ test("TC-CH06 - Overview totals", async ({ page }) => {
 
   await checkoutBtn.click();
 
-  await firstName.fill("John");
-
-  await lastName.fill("Doe");
-
-  await zipCode.fill("12345");
+ //fills the step 2 page info, first, last name and zip code
+  await checkout.inputDetails();
 
   await continueBtn.click();
 
@@ -192,9 +187,8 @@ test("TC-CH07 - Cancel on information page", async ({ page }) => {
   await checkoutBtn.click();
 
   await expect(page).toHaveURL(/checkout-step-one/);
-  await firstName.fill("John");
-  await lastName.fill("Doe");
-  await zipCode.fill("12345");
+  //fills the step 2 page info, first, last name and zip code
+  await checkout.inputDetails();
 
   await page.getByRole("button", { name: "Cancel" }).click();
 
@@ -209,11 +203,8 @@ test("TC-CH08 - Cancel on overview page", async ({ page }) => {
 
   await expect(page).toHaveURL(/checkout-step-one/);
 
-  await firstName.fill("John");
-
-  await lastName.fill("Doe");
-
-  await zipCode.fill("12345");
+ //fills the step 2 page info, first, last name and zip code
+  await checkout.inputDetails();
 
   await continueBtn.click();
 
@@ -235,11 +226,8 @@ test("TC-CH09 - Back Home after order", async ({ page }) => {
 
   await expect(page).toHaveURL(/checkout-step-one/);
 
-  await firstName.fill("John");
-
-  await lastName.fill("Doe");
-
-  await zipCode.fill("12345");
+ //fills the step 2 page info, first, last name and zip code
+  await checkout.inputDetails();
 
   await continueBtn.click();
 

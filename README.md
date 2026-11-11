@@ -42,8 +42,8 @@ SauceDemo provides public demo accounts. All use the password `secret_sauce`.
 
 ```bash
 # Clone the repository
-git clone <your-repository-url>
-cd <your-repository-folder>
+git clone https://github.com/Lubnas-git/Playwright_Demo
+cd Playwright_Demo
 
 # Install dependencies
 npm install

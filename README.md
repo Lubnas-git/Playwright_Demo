@@ -17,7 +17,7 @@ The project has two parts:
 | Checkout | Full purchase flow, required-field validation, cancel actions, order totals (item total, 8% tax, total) |
 | Menu, logout and session | Side menu, logout, back button after logout, reset app state |
 
-Each test case has an ID (for example `TC-L01` for login or `TC-CH01` for checkout), steps and an expected result.
+Each test case has an ID (for example `TC-L01` for login or `TC-CH01` for checkout), steps and an expected result. The full list is in [TEST_CASES.md](TEST_CASES.md).
 
 ## Test data
 
@@ -42,8 +42,8 @@ SauceDemo provides public demo accounts. All use the password `secret_sauce`.
 
 ```bash
 # Clone the repository
-git clone https://github.com/Lubnas-git/Playwright_Demo
-cd Playwright_Demo
+git clone <your-repository-url>
+cd <your-repository-folder>
 
 # Install dependencies
 npm install
@@ -77,4 +77,4 @@ README.md
 
 ## Author
 
-Your name here
+Lubna Araman

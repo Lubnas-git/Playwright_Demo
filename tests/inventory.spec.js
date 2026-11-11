@@ -3,7 +3,7 @@ import { LoginPage } from '../pages/login';
 import { InventoryPage } from '../pages/inventory';
 
 let login;
-let inventory, inventoryItems, productSort,
+export let inventory, inventoryItems, productSort,
     itemName, itemPrice, itemDesc,
     shoppingCart, addToCartBtn, removeBtn;
 
